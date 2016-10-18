@@ -971,7 +971,7 @@ def main():
 
         if result['before'] == result['after']:
             if local_mods:
-                result.update(changed=True, after=remote_head, msg='Local modifications exist')
+                result.update(changed=True, after=result['after'], msg='Local modifications exist')
                 # no diff, since the repo didn't change
                 module.exit_json(**result)
 
